@@ -14,13 +14,6 @@
 Want to shuffle the wallpaper?
 
 1. Make sure you have the scripts `change_wallpaper_once.sh` and `shuffle_wallpaper.sh` from `https://github.com/InternetBowser670/my-hyprland-rice/tree/main/com.ml4w.dotfiles.stable/.config/hypr` in `~/.config/hypr` on your system
-2. Run `mkdir -p ~/.local/bin && \
-if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then \
-    echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc && source ~/.zshrc; \
-fi && \
-ln -sf ~/.config/hypr/change_wallpaper_once.sh ~/.local/bin/change_wallpaper_once && \
-ln -sf ~/.config/hypr/shuffle_wallpaper.sh ~/.local/bin/shuffle_wallpaper && \
-chmod +x ~/.config/hypr/change_wallpaper_once.sh ~/.config/hypr/shuffle_wallpaper.sh
-`
+2. Run `mkdir -p ~/.local/bin && if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.zshrc && source ~/.zshrc; fi && ln -sf ~/.config/hypr/change_wallpaper_once.sh ~/.local/bin/change_wallpaper_once && ln -sf ~/.config/hypr/shuffle_wallpaper.sh ~/.local/bin/shuffle_wallpaper && chmod +x ~/.config/hypr/change_wallpaper_once.sh ~/.config/hypr/shuffle_wallpaper.sh`
 3. Run `shuffle_wallpaper &`. The wallpaper will shuffle every 10 minutes. You will have to run the script every time you login. Feel free to automate that.
 4. Run `change_wallpaper_once` if you don't like the wallpaper that you have. You can only run it after the previous command has been run in the session.
