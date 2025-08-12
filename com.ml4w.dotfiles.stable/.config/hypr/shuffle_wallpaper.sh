@@ -3,6 +3,7 @@
 DIR="$HOME/Pictures/wallpaper"
 MONITOR="HDMI-A-2"
 DEFAULT_WALLPAPER="$DIR/liquid2.jpg"
+CACHE_FILE="$HOME/.cache/current_wallpaper"
 
 # Kill any running hyprpaper quietly
 pkill hyprpaper 2>/dev/null
@@ -59,6 +60,9 @@ while true; do
     hyprctl hyprpaper wallpaper "$MONITOR,$FILE"
     wallust run "$FILE"
     matugen image "$FILE" --show-colors
+    sed -i "s|^path = .*|path = $FILE|" ~/.config/hypr/hyprlock.conf
+mkdir -p "$(dirname "$CACHE_FILE")"
+echo "$FILE" > "$CACHE_FILE"
 
     LAST_FILE="$FILE"
     sleep 600  # Change wallpaper every 10 minutes

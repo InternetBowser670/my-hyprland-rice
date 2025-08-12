@@ -3,6 +3,7 @@
 DIR="$HOME/Pictures/wallpaper"
 MONITOR="HDMI-A-2"
 LAST_WALLPAPER_FILE="$HOME/.cache/last_hyprpaper_wallpaper"
+CACHE_FILE="$HOME/.cache/current_wallpaper"
 
 # Read last wallpaper file if it exists
 if [[ -f "$LAST_WALLPAPER_FILE" ]]; then
@@ -32,7 +33,9 @@ done
 hyprctl hyprpaper wallpaper "$MONITOR,$FILE"
 wallust run "$FILE"
 matugen image "$FILE" --show-colors
-
+sed -i "s|^path = .*|path = $FILE|" ~/.config/hypr/hyprlock.conf
+mkdir -p "$(dirname "$CACHE_FILE")"
+echo "$FILE" > "$CACHE_FILE"
 # Save the chosen wallpaper path for next time
 echo "$FILE" > "$LAST_WALLPAPER_FILE"
 
