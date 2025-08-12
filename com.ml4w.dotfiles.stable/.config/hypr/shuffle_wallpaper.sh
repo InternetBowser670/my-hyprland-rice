@@ -57,6 +57,7 @@ while true; do
 
     # Set the wallpaper on your monitor
     hyprctl hyprpaper wallpaper "$MONITOR,$FILE"
+    wallust run "$FILE"
     matugen image "$FILE" --show-colors
 
     LAST_FILE="$FILE"

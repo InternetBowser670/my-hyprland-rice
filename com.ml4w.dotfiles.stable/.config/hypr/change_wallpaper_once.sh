@@ -30,6 +30,7 @@ done
 
 # Set the wallpaper
 hyprctl hyprpaper wallpaper "$MONITOR,$FILE"
+wallust run "$FILE"
 matugen image "$FILE" --show-colors
 
 # Save the chosen wallpaper path for next time
