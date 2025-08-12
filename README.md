@@ -20,5 +20,5 @@ ln -sf ~/.config/hypr/change_wallpaper_once.sh ~/.local/bin/change_wallpaper_onc
 ln -sf ~/.config/hypr/shuffle_wallpaper.sh ~/.local/bin/shuffle_wallpaper && \
 chmod +x ~/.config/hypr/change_wallpaper_once.sh ~/.config/hypr/shuffle_wallpaper.sh
 `
-3. Run `shuffle_wallpaper &`. The wallpaper will shuffle every 10 minutes.
+3. Run `shuffle_wallpaper &`. The wallpaper will shuffle every 10 minutes. You will have to run the script every time you login. Feel free to automate that.
 4. Run `change_wallpaper_once` if you don't like the wallpaper that you have. You can only run it after the previous command has been run in the session.
